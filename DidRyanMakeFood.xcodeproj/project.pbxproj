@@ -18,6 +18,14 @@
 		BB5A3BBE1783EEE70086EB2D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5A3BBD1783EEE70086EB2D /* Default-568h@2x.png */; };
 		BB5A3BC11783EEE70086EB2D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB5A3BBF1783EEE70086EB2D /* MainStoryboard.storyboard */; };
 		BB5A3BC41783EEE70086EB2D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5A3BC31783EEE70086EB2D /* MainViewController.m */; };
+		BB5A3BCB1783EF710086EB2D /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BCA1783EF710086EB2D /* RestKit.framework */; };
+		BB5A3BCF1783F04C0086EB2D /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5A3BCE1783F04C0086EB2D /* Tweet.m */; };
+		BB5A3BD11783F11D0086EB2D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD01783F11D0086EB2D /* CFNetwork.framework */; };
+		BB5A3BD31783F13D0086EB2D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD21783F13D0086EB2D /* QuartzCore.framework */; };
+		BB5A3BD51783F14D0086EB2D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD41783F14D0086EB2D /* CoreData.framework */; };
+		BB5A3BD71783F15C0086EB2D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD61783F15C0086EB2D /* Security.framework */; };
+		BB5A3BD91783F17C0086EB2D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */; };
+		BB5A3BDB1783F18C0086EB2D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,15 @@
 		BB5A3BC01783EEE70086EB2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BB5A3BC21783EEE70086EB2D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		BB5A3BC31783EEE70086EB2D /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		BB5A3BCA1783EF710086EB2D /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Frameworks/RestKit.framework; sourceTree = "<group>"; };
+		BB5A3BCD1783F04C0086EB2D /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tweet.h; path = Models/Tweet.h; sourceTree = "<group>"; };
+		BB5A3BCE1783F04C0086EB2D /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tweet.m; path = Models/Tweet.m; sourceTree = "<group>"; };
+		BB5A3BD01783F11D0086EB2D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BB5A3BD21783F13D0086EB2D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BB5A3BD41783F14D0086EB2D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BB5A3BD61783F15C0086EB2D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +61,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5A3BDB1783F18C0086EB2D /* SystemConfiguration.framework in Frameworks */,
+				BB5A3BD91783F17C0086EB2D /* MobileCoreServices.framework in Frameworks */,
+				BB5A3BD71783F15C0086EB2D /* Security.framework in Frameworks */,
+				BB5A3BD51783F14D0086EB2D /* CoreData.framework in Frameworks */,
+				BB5A3BD31783F13D0086EB2D /* QuartzCore.framework in Frameworks */,
+				BB5A3BD11783F11D0086EB2D /* CFNetwork.framework in Frameworks */,
 				BB5A3BA81783EEE70086EB2D /* UIKit.framework in Frameworks */,
 				BB5A3BAA1783EEE70086EB2D /* Foundation.framework in Frameworks */,
 				BB5A3BAC1783EEE70086EB2D /* CoreGraphics.framework in Frameworks */,
+				BB5A3BCB1783EF710086EB2D /* RestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +80,12 @@
 		BB5A3B9B1783EEE70086EB2D = {
 			isa = PBXGroup;
 			children = (
+				BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */,
+				BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */,
+				BB5A3BD61783F15C0086EB2D /* Security.framework */,
+				BB5A3BD41783F14D0086EB2D /* CoreData.framework */,
+				BB5A3BD21783F13D0086EB2D /* QuartzCore.framework */,
+				BB5A3BD01783F11D0086EB2D /* CFNetwork.framework */,
 				BB5A3BAD1783EEE70086EB2D /* DidRyanMakeFood */,
 				BB5A3BA61783EEE70086EB2D /* Frameworks */,
 				BB5A3BA51783EEE70086EB2D /* Products */,
@@ -73,6 +103,7 @@
 		BB5A3BA61783EEE70086EB2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB5A3BCA1783EF710086EB2D /* RestKit.framework */,
 				BB5A3BA71783EEE70086EB2D /* UIKit.framework */,
 				BB5A3BA91783EEE70086EB2D /* Foundation.framework */,
 				BB5A3BAB1783EEE70086EB2D /* CoreGraphics.framework */,
@@ -83,6 +114,7 @@
 		BB5A3BAD1783EEE70086EB2D /* DidRyanMakeFood */ = {
 			isa = PBXGroup;
 			children = (
+				BB5A3BCC1783F0290086EB2D /* Models */,
 				BB5A3BB61783EEE70086EB2D /* MainAppDelegate.h */,
 				BB5A3BB71783EEE70086EB2D /* MainAppDelegate.m */,
 				BB5A3BBF1783EEE70086EB2D /* MainStoryboard.storyboard */,
@@ -105,6 +137,15 @@
 				BB5A3BBD1783EEE70086EB2D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB5A3BCC1783F0290086EB2D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB5A3BCD1783F04C0086EB2D /* Tweet.h */,
+				BB5A3BCE1783F04C0086EB2D /* Tweet.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +218,7 @@
 				BB5A3BB41783EEE70086EB2D /* main.m in Sources */,
 				BB5A3BB81783EEE70086EB2D /* MainAppDelegate.m in Sources */,
 				BB5A3BC41783EEE70086EB2D /* MainViewController.m in Sources */,
+				BB5A3BCF1783F04C0086EB2D /* Tweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,9 +305,17 @@
 		BB5A3BC81783EEE70086EB2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DidRyanMakeFood/DidRyanMakeFood-Prefix.pch";
 				INFOPLIST_FILE = "DidRyanMakeFood/DidRyanMakeFood-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,9 +324,17 @@
 		BB5A3BC91783EEE70086EB2D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DidRyanMakeFood/DidRyanMakeFood-Prefix.pch";
 				INFOPLIST_FILE = "DidRyanMakeFood/DidRyanMakeFood-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

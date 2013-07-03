@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Ryan Popa. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
 #import "MainAppDelegate.h"
+#import "Tweet.h"
 
 @implementation MainAppDelegate
 
@@ -41,6 +43,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Setting up the object managers to use with various APIs
+//Creates the object manager for the MovServer API, it will be used as the default manager since it gets called first in the application launcher
+- (void)setupMovServerObjectManager
+{
+    //Setup Restkit
+    RKObjectManager *twitterApi = [RKObjectManager managerWithBaseURLString: @"https://api.twitter.com/1.1"];
+    twitterApi.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+    twitterApi.acceptMIMEType = RKMIMETypeJSON;
+    twitterApi.serializationMIMEType=RKMIMETypeJSON;
+    
+    //Setup object mappings
+    [Tweet setupObjectMapping];
 }
 
 @end
