@@ -7,9 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "RequestGetMyTweets.h"
 
 @interface MainViewController ()
-
 @end
 
 @implementation MainViewController
@@ -17,13 +17,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    //Request my tweets
+    RequestGetMyTweets *myTweetsRequest = [[RequestGetMyTweets alloc] initWithCallback: @selector(myTweetsCallback:) sender: self];
+    [myTweetsRequest execute];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Callbacks
+//Callback for when my tweets return
+- (void)myTweetsCallback: (id)object
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"My Tweets Have Returned!");
 }
-
 @end

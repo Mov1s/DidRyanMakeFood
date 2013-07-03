@@ -26,6 +26,8 @@
 		BB5A3BD71783F15C0086EB2D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD61783F15C0086EB2D /* Security.framework */; };
 		BB5A3BD91783F17C0086EB2D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */; };
 		BB5A3BDB1783F18C0086EB2D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */; };
+		BB5A3BDF1783F5D30086EB2D /* RestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5A3BDE1783F5D30086EB2D /* RestRequest.m */; };
+		BB5A3BE21783F6BF0086EB2D /* RequestGetMyTweets.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5A3BE11783F6BF0086EB2D /* RequestGetMyTweets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,10 @@
 		BB5A3BD61783F15C0086EB2D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BB5A3BDD1783F5D30086EB2D /* RestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestRequest.h; path = Requests/RestRequest.h; sourceTree = "<group>"; };
+		BB5A3BDE1783F5D30086EB2D /* RestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestRequest.m; path = Requests/RestRequest.m; sourceTree = "<group>"; };
+		BB5A3BE01783F6BF0086EB2D /* RequestGetMyTweets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestGetMyTweets.h; path = Requests/RequestGetMyTweets.h; sourceTree = "<group>"; };
+		BB5A3BE11783F6BF0086EB2D /* RequestGetMyTweets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestGetMyTweets.m; path = Requests/RequestGetMyTweets.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +86,6 @@
 		BB5A3B9B1783EEE70086EB2D = {
 			isa = PBXGroup;
 			children = (
-				BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */,
-				BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */,
-				BB5A3BD61783F15C0086EB2D /* Security.framework */,
-				BB5A3BD41783F14D0086EB2D /* CoreData.framework */,
-				BB5A3BD21783F13D0086EB2D /* QuartzCore.framework */,
-				BB5A3BD01783F11D0086EB2D /* CFNetwork.framework */,
 				BB5A3BAD1783EEE70086EB2D /* DidRyanMakeFood */,
 				BB5A3BA61783EEE70086EB2D /* Frameworks */,
 				BB5A3BA51783EEE70086EB2D /* Products */,
@@ -103,10 +103,16 @@
 		BB5A3BA61783EEE70086EB2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB5A3BCA1783EF710086EB2D /* RestKit.framework */,
-				BB5A3BA71783EEE70086EB2D /* UIKit.framework */,
-				BB5A3BA91783EEE70086EB2D /* Foundation.framework */,
+				BB5A3BD01783F11D0086EB2D /* CFNetwork.framework */,
+				BB5A3BD41783F14D0086EB2D /* CoreData.framework */,
 				BB5A3BAB1783EEE70086EB2D /* CoreGraphics.framework */,
+				BB5A3BA91783EEE70086EB2D /* Foundation.framework */,
+				BB5A3BD81783F17B0086EB2D /* MobileCoreServices.framework */,
+				BB5A3BD21783F13D0086EB2D /* QuartzCore.framework */,
+				BB5A3BCA1783EF710086EB2D /* RestKit.framework */,
+				BB5A3BD61783F15C0086EB2D /* Security.framework */,
+				BB5A3BDA1783F18C0086EB2D /* SystemConfiguration.framework */,
+				BB5A3BA71783EEE70086EB2D /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +120,7 @@
 		BB5A3BAD1783EEE70086EB2D /* DidRyanMakeFood */ = {
 			isa = PBXGroup;
 			children = (
+				BB5A3BDC1783F5B60086EB2D /* Requests */,
 				BB5A3BCC1783F0290086EB2D /* Models */,
 				BB5A3BB61783EEE70086EB2D /* MainAppDelegate.h */,
 				BB5A3BB71783EEE70086EB2D /* MainAppDelegate.m */,
@@ -146,6 +153,17 @@
 				BB5A3BCE1783F04C0086EB2D /* Tweet.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		BB5A3BDC1783F5B60086EB2D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BB5A3BDD1783F5D30086EB2D /* RestRequest.h */,
+				BB5A3BDE1783F5D30086EB2D /* RestRequest.m */,
+				BB5A3BE01783F6BF0086EB2D /* RequestGetMyTweets.h */,
+				BB5A3BE11783F6BF0086EB2D /* RequestGetMyTweets.m */,
+			);
+			name = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +237,8 @@
 				BB5A3BB81783EEE70086EB2D /* MainAppDelegate.m in Sources */,
 				BB5A3BC41783EEE70086EB2D /* MainViewController.m in Sources */,
 				BB5A3BCF1783F04C0086EB2D /* Tweet.m in Sources */,
+				BB5A3BDF1783F5D30086EB2D /* RestRequest.m in Sources */,
+				BB5A3BE21783F6BF0086EB2D /* RequestGetMyTweets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
