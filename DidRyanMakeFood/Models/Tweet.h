@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Tweet : NSObject
+@property (nonatomic, strong) NSString *createdAt;
+@property (nonatomic, strong) NSString *text;
+
 + (void)setupObjectMapping;
 @end

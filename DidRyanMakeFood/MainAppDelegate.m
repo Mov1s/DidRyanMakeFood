@@ -14,7 +14,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    //Setup RESTKit
+    [self setupTwitterObjectManager];
+    
     return YES;
 }
 							
@@ -46,14 +48,20 @@
 }
 
 #pragma mark - Setting up the object managers to use with various APIs
-//Creates the object manager for the MovServer API, it will be used as the default manager since it gets called first in the application launcher
-- (void)setupMovServerObjectManager
+//Creates the object manager for the twitter API, it will be used as the default manager since it gets called first in the application launcher
+- (void)setupTwitterObjectManager
 {
     //Setup Restkit
     RKObjectManager *twitterApi = [RKObjectManager managerWithBaseURLString: @"https://api.twitter.com/1.1"];
     twitterApi.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
     twitterApi.acceptMIMEType = RKMIMETypeJSON;
     twitterApi.serializationMIMEType=RKMIMETypeJSON;
+    
+    //Set authorization token
+    [[[[RKObjectManager sharedManager] client] HTTPHeaders] setValue: @"" forKey: @"Authorization"];
+    
+    //Disable RESTKit logging because my own logging is more specific 99% of the time
+    RKLogConfigureByName("*", RKLogLevelOff);
     
     //Setup object mappings
     [Tweet setupObjectMapping];
