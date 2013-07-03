@@ -30,40 +30,31 @@
 //RESTKit object loader
 - (void)objectLoader: (RKObjectLoader *)objectLoader didLoadObjects: (NSArray *)objects
 {
-    id returnObject = [self mapResponseWithObjects: objects];
-    [self.sender performSelector: self.callbackSelector withObject: returnObject];
+    [self mapResponseWithObjects: objects];
 }
 
 //RESTKit request response handler
 - (void)request: (RKRequest*)request didLoadResponse: (RKResponse*)response
-{
-    id returnObject;
-    
+{    
     //Get object for various response types
     if([response isOK])
-        returnObject = [self successResponse];
+        [self successResponse];
     else if([response isConflict])
-        returnObject = [self conflictResponse];
+        [self conflictResponse];
     else if([response isUnauthorized])
-        returnObject = [self unauthorizedResponse];
-    
-    [self.sender performSelector: self.callbackSelector withObject: returnObject];
+        [self unauthorizedResponse];
 }
 
 //RESTKit object loader failure handler
 - (void)objectLoader: (RKObjectLoader *)objectLoader didFailWithError: (NSError *)error
-{
-    id returnObject;
-    
+{    
     //Get object for various response types
     if(error.code == 2)
-        returnObject = [self offlineResponse];
+        [self offlineResponse];
     if(error.code == -1001)
-        returnObject = [self timeoutResponse];
+        [self timeoutResponse];
     else
-        returnObject = [self failureResponse];
-    
-    [self.sender performSelector: self.callbackSelector withObject: returnObject];
+        [self failureResponse];
 }
 
 #pragma mark - Executors
@@ -73,45 +64,60 @@
 }
 
 #pragma mark - Request Response Types
-- (id)mapResponseWithObjects: (NSArray *)objects
+- (void)mapResponseWithObjects: (NSArray *)objects
 {
     NSLog(@"%@ was mapped.", [self class]);
-    return objects;
+    [self.sender performSelector: self.callbackSelector withObject: objects];
 }
 
-- (id)successResponse
+- (void)successResponse
 {
     NSLog(@"%@ returned successfully.", [self class]);
-    return nil;
 }
 
-- (id)failureResponse
+- (void)failureResponse
 {
     NSLog(@"%@ returned with a failure.", [self class]);
-    return nil;
+    
+    //Create error
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject: @"Request Failed" forKey: NSLocalizedDescriptionKey];
+    NSError *error = [NSError errorWithDomain: @"request" code: 500 userInfo: userInfo];
+    
+    //Perform callback selector with error
+    [self.sender performSelector: self.callbackSelector withObject: error];
 }
 
-- (id)offlineResponse
+- (void)offlineResponse
 {
     NSLog(@"%@ is offline.", [self class]);
-    return nil;
+    
+    //Create error
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject: @"No Network Connection" forKey: NSLocalizedDescriptionKey];
+    NSError *error = [NSError errorWithDomain: @"request" code: 600 userInfo: userInfo];
+    
+    //Perform callback selector with error
+    [self.sender performSelector: self.callbackSelector withObject: error];
 }
 
-- (id)timeoutResponse
+- (void)timeoutResponse
 {
     NSLog(@"%@ timed out.", [self class]);
-    return nil;
+    
+    //Create error
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject: @"Network Timeout" forKey: NSLocalizedDescriptionKey];
+    NSError *error = [NSError errorWithDomain: @"request" code: 601 userInfo: userInfo];
+    
+    //Perform callback selector with error
+    [self.sender performSelector: self.callbackSelector withObject: error];
 }
 
-- (id)conflictResponse
+- (void)conflictResponse
 {
     NSLog(@"%@ had a conflict.", [self class]);
-    return nil;
 }
 
-- (id)unauthorizedResponse
+- (void)unauthorizedResponse
 {
     NSLog(@"%@ is unauthorized.", [self class]);
-    return nil;
 }
 @end

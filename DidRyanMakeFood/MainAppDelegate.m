@@ -57,6 +57,9 @@
     twitterApi.acceptMIMEType = RKMIMETypeJSON;
     twitterApi.serializationMIMEType=RKMIMETypeJSON;
     
+    //Set authorization token
+    [[[[RKObjectManager sharedManager] client] HTTPHeaders] setValue: @"" forKey: @"Authorization"];
+    
     //Disable RESTKit logging because my own logging is more specific 99% of the time
     RKLogConfigureByName("*", RKLogLevelOff);
     
