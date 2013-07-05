@@ -103,7 +103,7 @@
     
     //Adjust font sizes
     CGFloat mainLabelFontSize = [self biggestFontSizeForText: mainText inRect: self.tweetMainLabel.bounds];
-    CGFloat subLabelFontSize = [self biggestFontSizeForText: mainText inRect: self.tweetSubLabel.bounds];
+    CGFloat subLabelFontSize = [self biggestFontSizeForText: subText inRect: self.tweetSubLabel.bounds];
     self.tweetMainLabel.font = [UIFont systemFontOfSize: mainLabelFontSize];
     self.tweetSubLabel.font = [UIFont systemFontOfSize: subLabelFontSize];
 }
@@ -164,7 +164,7 @@
     for(int size = 15; YES; size += 2)
     {
         CGSize fontRectSize = [text sizeWithFont: [UIFont boldSystemFontOfSize: size]];
-        if(fontRectSize.height >= rect.size.height || fontRectSize.width >= rect.size.width || !text)
+        if(fontRectSize.height >= rect.size.height || fontRectSize.width >= rect.size.width || !text || [text isEqualToString: @""])
             break;
         fontSize = size;
     }

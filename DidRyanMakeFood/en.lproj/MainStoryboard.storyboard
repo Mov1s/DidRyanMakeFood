@@ -17,7 +17,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="YES," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u0m-LA-9fH">
-                                        <rect key="frame" x="0.0" y="202" width="768" height="480"/>
+                                        <rect key="frame" x="0.0" y="302" width="768" height="401"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="300"/>
@@ -25,7 +25,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="yes I did." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iF4-38-2ZB">
-                                        <rect key="frame" x="0.0" y="690" width="768" height="112"/>
+                                        <rect key="frame" x="0.0" y="669" width="768" height="124"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="95"/>
@@ -92,6 +92,7 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="showErrorAction:"/>
                 <relationship kind="outlet" name="showErrorButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tweetMainLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tweetSubLabel" candidateClass="UILabel"/>
