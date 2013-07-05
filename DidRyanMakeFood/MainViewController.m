@@ -26,9 +26,12 @@
     UIImage *background = [UIImage imageNamed: @"bg_main.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage: background];
     
-    //Request my tweets
-    RequestGetMyTweets *myTweetsRequest = [[RequestGetMyTweets alloc] initWithCallback: @selector(myTweetsCallback:) sender: self];
-    [myTweetsRequest execute];
+    //Get the ball rolling with the first tweet request
+    [self refreshMyTweet];
+    
+    //Start the timer for refreshing tweets
+    NSInteger secondsInHour = 60 * 60;
+    [NSTimer scheduledTimerWithTimeInterval: secondsInHour target: self selector: @selector(refreshMyTweet) userInfo: nil repeats: YES];
 }
 
 #pragma mark - Orientation Change Methods
@@ -39,6 +42,14 @@
         [self showErrorText: self.lastErrorMessage];
     else
         [self showTweetText: self.currentTweet.text];
+}
+
+#pragma mark - Twitter API Request Methods
+//Request DidRyanMakeFood tweets from the twitter API
+- (void)refreshMyTweet
+{
+    RequestGetMyTweets *myTweetsRequest = [[RequestGetMyTweets alloc] initWithCallback: @selector(myTweetsCallback:) sender: self];
+    [myTweetsRequest execute];
 }
 
 #pragma mark - Callbacks
