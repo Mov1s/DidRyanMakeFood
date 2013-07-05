@@ -8,6 +8,10 @@
 
 #import "BottomBarView.h"
 
+@interface BottomBarView()
+@property (nonatomic, strong) UIImageView *background;
+@end
+
 @implementation BottomBarView
 
 - (id)initWithCoder: (NSCoder *)aDecoder
@@ -29,10 +33,16 @@
 - (void)setup
 {
     UIImage *backgroundImage = [[UIImage imageNamed: @"bg_bottom_bar.png"] resizableImageWithCapInsets: UIEdgeInsetsMake(2, 0, 0, 0)];
-    UIImageView *background = [[UIImageView alloc] initWithImage: backgroundImage];
-    background.frame = self.bounds;
-    background.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self addSubview: background];
+    self.background = [[UIImageView alloc] initWithImage: backgroundImage];
+    self.background.frame = self.bounds;
+    self.background.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self addSubview: self.background];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self sendSubviewToBack: self.background];
 }
 
 @end

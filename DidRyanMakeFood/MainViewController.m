@@ -35,7 +35,10 @@
 //When the orientation changes refresh the tweet to refresh the font sizes
 - (void)didRotateFromInterfaceOrientation: (UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self showTweetText: self.currentTweet.text];
+    if(self.isShowingError)
+        [self showErrorText: self.lastErrorMessage];
+    else
+        [self showTweetText: self.currentTweet.text];
 }
 
 #pragma mark - Callbacks
@@ -47,6 +50,13 @@
     {
         self.lastErrorMessage = [(NSError *)object localizedDescription];
         self.showErrorButton.hidden = NO;
+        
+        //Show the error if there is nothing else to show
+        if(!self.currentTweet)
+        {
+            self.isShowingError = YES;
+            [self showErrorText: self.lastErrorMessage];
+        }
     }
     //Draw the tweet text to the screen
     else

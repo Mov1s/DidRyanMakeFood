@@ -37,9 +37,9 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Did Ryan make food today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1sh-44-GFl">
-                                                <rect key="frame" x="0.0" y="155" width="768" height="35"/>
+                                                <rect key="frame" x="0.0" y="145" width="768" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                 <color key="textColor" red="0.18823531269999999" green="0.18823531269999999" blue="0.1960784495" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -85,6 +85,22 @@
     <resources>
         <image name="img_error.png" width="26" height="26"/>
     </resources>
+    <classes>
+        <class className="BottomBarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BottomBarView.h"/>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="showErrorButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tweetMainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweetSubLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TopBarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopBarView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
