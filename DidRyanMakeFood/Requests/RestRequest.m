@@ -120,4 +120,5 @@
 {
     NSLog(@"%@ is unauthorized.", [self class]);
 }
+
 @end
